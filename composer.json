@@ -1,0 +1,7 @@
+{
+	"name": "opencloud/backup",
+	"description": "Easily backup files to an opencloud container",
+	"require": {
+		"rackspace/php-opencloud": "^1.12"
+	}
+}
