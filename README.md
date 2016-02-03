@@ -8,12 +8,17 @@ This script is very inspired from https://gist.github.com/BaptisteDixneuf/85dc44
 
 Thank you [BaptisteDixneuf](http://baptistedixneuf.fr/) :)
 
+Moreover, this gist is also a good documentation to initialize the storage.
+
 ## Installation
 
 git and [composer](https://getcomposer.org/) must be present.
 
-    git clone https://github.com/partageit/php-opencloud-backup.git
-    composer update
+```
+git clone https://github.com/partageit/php-opencloud-backup.git
+cd php-opencloud-backup
+composer install
+```
 
 ## Usage
 

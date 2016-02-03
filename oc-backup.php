@@ -57,6 +57,7 @@ try {
 	$client->authenticate();
 	$service = $client->objectStoreService($serviceName, $region);
 	$container = $service->createContainer($containerName);
+	$container = $service->getContainer($containerName);
 
 	foreach (glob($files) as $filename) {
 		echo "Sending $filename (" . number_format(filesize($filename) / 1024 / 1024, 2) . " MB)\n";
@@ -82,5 +83,7 @@ function usage() {
 	echo " --config    : Path to the configuration file.\n";
 	echo "\n";
 }
+
+echo "Finished, bye!";
 
 ?>
