@@ -1,0 +1,9 @@
+{
+	"authUrl": "https://auth.cloud.ovh.net/v2.0",
+	"username": "",
+	"password": "",
+	"tenant": "",
+	"swiftUrl": "",
+	"serviceName": "swift",
+	"region": ""
+}
