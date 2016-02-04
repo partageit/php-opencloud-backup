@@ -53,16 +53,21 @@ $serviceName = $ocParameters->serviceName;
 $region = $ocParameters->region;
 
 try {
-
 	$client->authenticate();
 	$service = $client->objectStoreService($serviceName, $region);
 	$container = $service->createContainer($containerName);
+	if ($container === false) {
+		echo "The container '$containerName' already exists.\n";
+	} else {
+		echo "The container '$containerName' has been successfully created.\n";
+	}
 	$container = $service->getContainer($containerName);
 
 	foreach (glob($files) as $filename) {
-		echo "Sending $filename (" . number_format(filesize($filename) / 1024 / 1024, 2) . " MB)\n";
+		echo "Sending $filename (" . number_format(filesize($filename) / 1024 / 1024, 2) . " MB)...\n";
 		$fileData = fopen($filename, "r+");
 		$container->uploadObject(basename($filename), $fileData);
+		echo "-> File sent.\n";
 	}
 
 } catch (Exception $e) {
@@ -84,6 +89,6 @@ function usage() {
 	echo "\n";
 }
 
-echo "Finished, bye!";
+echo "Finished, bye!\n\n";
 
 ?>
